@@ -24,3 +24,20 @@ const playAgainButton = document.querySelector(".play-again");
 
 // Create another global variable called word and give it the value of "magnolia". 
 const word = "magnolia";
+
+const placeholder = function (word) {
+   const placeholderLetters = []; 
+   for (let letter of word) {
+       console.log(letter); 
+       placeholderLetters.push("●")
+   }
+   wordInProgress.innerText = placeholderLetters.join("");
+}
+placeholder(word);
+
+guessButton.addEventListener("click", function(e){
+    e.preventDefault();
+    const guess = letterInput.value;
+    console.log(guess);
+    letterInput.value = "";
+});
